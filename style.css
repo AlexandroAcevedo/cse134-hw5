@@ -270,3 +270,17 @@ a:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visib
 #error-messages[hidden], #character-info[hidden], .theme-toggle[hidden] { display:none; }
 @view-transition { navigation:auto; }
 @media (prefers-reduced-motion:reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation-duration:0.01ms !important; } }
+
+/* HW5: pass portfolio theme colors to the Chiikawa component. */
+fact-panel {
+  --fact-background: #fff4df;
+  --fact-text: #382b28;
+  --fact-accent: #a45169;
+  --fact-button: #f9dce4;
+}
+:root[data-theme="dark"] fact-panel {
+  --fact-background: #26354b;
+  --fact-text: #fff4df;
+  --fact-accent: #ffc1d2;
+  --fact-button: #394b65;
+}

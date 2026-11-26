@@ -14,7 +14,7 @@
     }
     customElements.define("hello-console", HelloConsole);
   </script>
-<script defer="True" src="theme.js"></script><link rel="stylesheet" href="fact-panel.css">
+<script defer src="theme.js"></script><link rel="stylesheet" href="fact-panel.css">
 <script defer src="fact-panel.js"></script>
 </head>
 <body>
@@ -46,8 +46,8 @@
 </section>
 <section aria-label="Interactive fact demonstration">
 <fact-panel id="facts"></fact-panel>
-<button type="button" id="fact-mode" hidden>Switch to compact mode</button>
-<noscript><p>Enable JavaScript to use the random facts widget.</p></noscript>
+<button type="button" id="fact-mode" aria-controls="facts" hidden>Switch to compact mode</button>
+<noscript><p>Enable JavaScript to load live data for Chiikawa’s Useless Facts.</p></noscript>
 </section>
 </main>
 <footer>

@@ -70,10 +70,30 @@ class FactPanel extends HTMLElement {
 customElements.define("fact-panel", FactPanel);
 const factPanel = document.querySelector("#facts");
 const modeButton = document.querySelector("#fact-mode");
+const factModeKey = "hw5-fact-panel-mode";
 if (factPanel && modeButton) {
+  function applyFactMode(mode) {
+    const compact = mode === "compact";
+    factPanel.toggleAttribute("compact", compact);
+    modeButton.textContent = `Switch to ${compact ? "expanded" : "compact"} mode`;
+  }
+
+  let savedMode = "expanded";
+  try {
+    const stored = localStorage.getItem(factModeKey);
+    if (stored === "compact" || stored === "expanded") savedMode = stored;
+  } catch (error) {
+    console.warn("Could not read fact panel preference:", error);
+  }
+  applyFactMode(savedMode);
   modeButton.hidden = false;
   modeButton.addEventListener("click", () => {
-    const compact = factPanel.toggleAttribute("compact");
-    modeButton.textContent = `Switch to ${compact ? "expanded" : "compact"} mode`;
+    const mode = factPanel.hasAttribute("compact") ? "expanded" : "compact";
+    applyFactMode(mode);
+    try {
+      localStorage.setItem(factModeKey, mode);
+    } catch (error) {
+      console.warn("Could not save fact panel preference:", error);
+    }
   });
 }
