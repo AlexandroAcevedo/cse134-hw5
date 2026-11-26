@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Alexandro's computer science student portfolio" name="description"/>
+<title>Projects | Alexandro Portfolio</title>
+<link href="data:," rel="icon"/>
+<link href="style.css" rel="stylesheet"/>
+<script>
+    class HelloConsole extends HTMLElement {
+      connectedCallback() { console.log("Hello World!"); }
+    }
+    customElements.define("hello-console", HelloConsole);
+  </script>
+<script defer src="theme.js"></script><link rel="stylesheet" href="fact-panel.css">
+<script defer src="fact-panel.js"></script>
+</head>
+<body>
+<header><h1>Projects</h1><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="experience.html">Experience</a><a href="contact.html">Contact</a><a href="form-no-js.html">HTML Form</a><a href="form-with-js.html">Enhanced Form</a></nav><button class="theme-toggle" hidden="" id="theme-toggle" type="button">Switch theme</button></header>
+<main>
+<section>
+<h2>Selected Work</h2>
+<article>
+<h3>Web Analytics Project</h3>
+<p>Built a web analytics system that collected site activity and presented information through administrative reports.</p>
+</article>
+<article>
+<h3>Discord Utility Bot</h3>
+<p>Developed a Python bot with persistent data and commands for community activities and reward tracking.</p>
+</article>
+<article>
+<h3>Systems Programming Exercises</h3>
+<p>Used debugging tools and low-level programming concepts to inspect program behavior and work with assembly.</p>
+</article>
+</section>
+<section>
+<h2>Project Priorities</h2>
+<ol>
+<li>Understand the problem.</li>
+<li>Build a working solution.</li>
+<li>Test the result.</li>
+<li>Improve usability and maintainability.</li>
+</ol>
+</section>
+<section aria-label="Interactive fact demonstration">
+<fact-panel id="facts"></fact-panel>
+<button type="button" id="fact-mode" aria-controls="facts" hidden>Switch to compact mode</button>
+<noscript><p>Enable JavaScript to load live data for Chiikawa’s Useless Facts.</p></noscript>
+</section>
+</main>
+<footer>
+<p>Alexandro's CSE 134B portfolio. <a href="experiments.html">HTML experiments</a></p>
+</footer>
+<hello-console></hello-console>
+</body>
+</html>

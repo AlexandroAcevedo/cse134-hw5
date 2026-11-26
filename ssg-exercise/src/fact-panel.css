@@ -1,0 +1,33 @@
+fact-panel {
+  display: block;
+  padding: 1.25rem;
+  border: 0.15rem solid var(--fact-accent, #a45169);
+  border-radius: 1rem;
+  background-color: var(--fact-background, #fff4df);
+  color: var(--fact-text, #382b28);
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+fact-panel h2 { color: var(--fact-text, #382b28); }
+fact-panel .fact-mascot {
+  width: 9rem;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
+fact-panel button {
+  background-color: var(--fact-button, #f9dce4);
+  color: var(--fact-text, #382b28);
+  border-color: var(--fact-accent, #a45169);
+  border-radius: 0.75rem;
+}
+fact-panel button:hover:not(:disabled) {
+  background-color: var(--fact-button, #f9dce4);
+  color: var(--fact-text, #382b28);
+  text-decoration: underline;
+}
+fact-panel button:focus-visible { outline-color: var(--fact-accent, #a45169); }
+fact-panel[compact] { padding: 0.75rem; }
+fact-panel [hidden], #fact-mode[hidden] { display: none; }
+#fact-mode { margin-top: 1rem; }
