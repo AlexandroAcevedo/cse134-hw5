@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Alexandro's computer science student portfolio" name="description"/>
+<title>About | Alexandro Portfolio</title>
+<link href="data:," rel="icon"/>
+<link href="style.css" rel="stylesheet"/>
+<script>
+    class HelloConsole extends HTMLElement {
+      connectedCallback() { console.log("Hello World!"); }
+    }
+    customElements.define("hello-console", HelloConsole);
+  </script>
+<script defer="True" src="theme.js"></script></head>
+<body>
+<header>
+<h1>About Me</h1>
+<nav aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="experience.html">Experience</a><a href="contact.html">Contact</a><a href="form-no-js.html">HTML Form</a><a href="form-with-js.html">Enhanced Form</a></nav>
+<button class="theme-toggle" hidden="" id="theme-toggle" type="button">Switch theme</button></header>
+<main>
+<section>
+<h2>Background</h2>
+<p>I am a computer science student interested in web development, software engineering, and building useful technical projects.</p>
+<picture>
+<source srcset="profilePIC.jpg" type="image/jpeg"/>
+<img alt="Kurmanju holding a drink" src="profilePIC.jpg"/>
+</picture>
+</section>
+<section>
+<h2>Interests</h2>
+<ul>
+<li>Web development</li>
+<li>Software tools and automation</li>
+<li>Systems and debugging</li>
+</ul>
+<p>I like projects where I can move from an idea to a working implementation.<br/>That process helps me understand both design and engineering decisions.</p>
+</section>
+<section>
+<h2>What I Value</h2>
+<p><i>Readable code</i>, <strong>clear structure</strong>, and testing are important parts of how I approach development.</p>
+<p>Student · Developer · Problem Solver</p>
+</section>
+</main>
+<footer>
+<p>Alexandro's CSE 134B portfolio. <a href="experiments.html">HTML experiments</a></p>
+</footer>
+<hello-console></hello-console>
+</body>
+</html>

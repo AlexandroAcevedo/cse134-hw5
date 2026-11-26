@@ -1,0 +1,272 @@
+/*
+  Name: Alexandro Acevedo
+  CSE 134B Homework 3
+*/
+
+/* Shared design choices */
+:root {
+  --primary-color: #182b49;
+  --accent-color: #ffcd00;
+  --background-color: #f5f7fa;
+  --text-color: #202124;
+  --font-stack: Arial, Helvetica, sans-serif;
+  --content-width: 70rem;
+}
+
+/* Base typography and presentation */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-stack);
+  line-height: 1.6;
+}
+
+header,
+main,
+footer {
+  width: min(90%, var(--content-width));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  padding: 2rem 0 1rem;
+}
+
+main {
+  padding: 1rem 0 3rem;
+}
+
+footer {
+  padding: 1.5rem 0;
+  border-top: 0.15rem solid var(--primary-color);
+}
+
+/* Heading hierarchy */
+h1 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.75rem;
+}
+
+h3 {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+/*
+  Descendant combinator:
+  Targets links located anywhere inside the navigation.
+*/
+nav a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Navigation uses Flexbox for a meaningful layout. */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav a:hover {
+  color: #4d3c00;
+  text-decoration: underline;
+}
+
+/* Visible keyboard focus */
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0.2rem solid var(--accent-color);
+  outline-offset: 0.2rem;
+}
+
+/*
+  Child combinator:
+  Targets sections that are direct children of main.
+*/
+main > section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+/*
+  Adjacent sibling combinator:
+  Adds spacing when one section immediately follows another.
+*/
+section + section {
+  margin-top: 1.5rem;
+}
+
+/*
+  Attribute selector:
+  Targets links that point to HTML documents.
+*/
+a[href$=".html"] {
+  text-underline-offset: 0.2em;
+}
+
+article {
+  padding: 1rem;
+  border-left: 0.3rem solid var(--accent-color);
+}
+
+portfolio-note {
+  display: block;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #eef2f7;
+  border-left: 0.3rem solid var(--primary-color);
+}
+
+/* Responsive media */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  border-radius: 0.5rem;
+}
+
+/* Forms */
+form {
+  max-width: 50rem;
+}
+
+fieldset {
+  margin: 0;
+  padding: 1.5rem;
+  border: 0.1rem solid #b8bec7;
+  border-radius: 0.5rem;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 30rem;
+  padding: 0.6em;
+  border: 0.1rem solid #8b929c;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+
+textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+button {
+  padding: 0.6em 1em;
+  border: 0.1rem solid var(--primary-color);
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #263f6a;
+}
+
+progress {
+  max-width: 100%;
+}
+
+/* Narrow-screen layout */
+@media (max-width: 40rem) {
+  header,
+  main,
+  footer {
+    width: 92%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  main > section {
+    padding: 1rem;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  fieldset {
+    padding: 1rem;
+  }
+
+  input,
+  textarea {
+    max-width: 100%;
+  }
+}
+
+/* Homework 4: shared light/dark theme colors */
+:root { --surface-color:#ffffff; --muted-surface:#eef2f7; --border-color:#8b929c; --link-color:#182b49; --button-hover:#263f6a; --error-color:#a61b29; --valid-color:#17633b; --focus-color:#a35b00; color-scheme:light; }
+:root[data-theme="dark"] { --primary-color:#ffdc60; --accent-color:#ffcd00; --background-color:#101a2a; --text-color:#f2f5fb; --surface-color:#1b2b41; --muted-surface:#263b56; --border-color:#b4c2d4; --link-color:#ffdc60; --button-hover:#36537b; --error-color:#ffb4bd; --valid-color:#9be7b2; --focus-color:#ffdf6b; color-scheme:dark; }
+main > section { background-color:var(--surface-color); }
+portfolio-note { background-color:var(--muted-surface); }
+nav a, a { color:var(--link-color); }
+nav a:hover, a:hover { color:var(--link-color); text-decoration:underline; }
+input:not([type="hidden"]), textarea { background-color:var(--surface-color); color:var(--text-color); border-color:var(--border-color); }
+fieldset { border-color:var(--border-color); }
+button { background-color:var(--background-color); color:var(--text-color); border-color:var(--primary-color); }
+button:hover { background-color:var(--muted-surface); }
+a:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible { outline:0.2rem solid var(--focus-color); outline-offset:0.2rem; }
+.theme-toggle { margin-top:1rem; }
+.form-field { display:flex; flex-direction:column; gap:0.35rem; max-width:34rem; }
+.form-field label { font-weight:700; }
+.form-field small { display:block; }
+.form-field input, .form-field textarea { width:100%; max-width:100%; border-width:0.15rem; }
+.form-field input:user-invalid, .form-field textarea:user-invalid, .form-field .has-error { border-color:var(--error-color); }
+.form-field input:user-valid, .form-field textarea:user-valid { border-color:var(--valid-color); }
+.field-error { color:var(--error-color); font-weight:700; }
+.message-area { max-width:34rem; padding:0.6rem 0; }
+.message-area.warning { font-weight:700; color:var(--error-color); }
+#error-messages { color:var(--error-color); }
+#error-messages[hidden], #character-info[hidden], .theme-toggle[hidden] { display:none; }
+@view-transition { navigation:auto; }
+@media (prefers-reduced-motion:reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation-duration:0.01ms !important; } }
